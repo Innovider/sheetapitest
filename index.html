@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+<!--https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetId}/values/{range}-->
+
+
+    <script>
+        
+        const api_key = 'AIzaSyBRBVaHqpFhCaIYQQ_ZBzQt3TEIBcJU1QQ';
+        
+        let id = '16RV0Qam2y-b1VoHnozQVSRQdM_mRtFmeRqe6DUGcA2Y';
+        let api_url = `https://sheets.googleapis.com/v4/spreadsheets/${id}/values/Sheet1`;
+
+        async function fetchText() {
+            let response = await fetch( api_url);
+            let data = await response.text();
+            return data;
+        }
+        
+        console.log(fetchText());
+
+    </script>
+
+</body>
+
+</html>
